@@ -1,0 +1,71 @@
+﻿@model IEnumerable<webAppGallery.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idCar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numTel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dirCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idCar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dirCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id}) |
+                @Html.ActionLink("Details", "Details", new {  id=item.id}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
